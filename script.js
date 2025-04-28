@@ -1,5 +1,5 @@
 // Game configuration and state variables
-const GOAL_CANS = 25;        // Total items needed to collect
+let GOAL_CANS = 25;        // Total items needed to collect
 let currentCans = 0;         // Current number of items collected
 let gameActive = false;      // Tracks if game is currently running
 let spawnTimer;             // Holds the timer for spawning items
@@ -19,12 +19,25 @@ let scoreCounter = document.getElementById('current-cans')
 function incrementScore() {
   currentCans++;
   scoreCounter.textContent = currentCans;
+  updateMilestones(); // Update milestone colors
   if (currentCans >= GOAL_CANS) {
     endGameWin();
   }
 }
 
+function updateMilestones() {
+  const milestones = document.querySelectorAll('.milestone');
+  const progressPercentage = (currentCans / GOAL_CANS) * 100;
 
+  milestones.forEach((milestone) => {
+    const milestonePercentage = parseInt(milestone.style.left);
+    if (progressPercentage >= milestonePercentage) {
+      milestone.style.backgroundColor = '#8BD1CB';
+      milestone.style.borderColor = '#8BD1CB';
+      milestone.style.color = 'white';
+    }
+  });
+}
 
 // Creates the 3x3 game grid where items will appear
 function createGrid() {
@@ -164,6 +177,18 @@ function endGameWin() {
 // ADDITIONAL CODE
 
 //Logic for user to click on the can and increment the score
+
+// Add event listeners for difficulty buttons
+document.getElementById('easy-mode').addEventListener('click', () => setDifficulty(10));
+document.getElementById('medium-mode').addEventListener('click', () => setDifficulty(20));
+document.getElementById('hard-mode').addEventListener('click', () => setDifficulty(30));
+
+function setDifficulty(goal) {
+  if (gameActive) return; // Prevent changing difficulty during an active game
+  GOAL_CANS = goal;
+  document.getElementById('goal-cans').textContent = GOAL_CANS; // Update the displayed goal
+  alert(`Difficulty set! Collect ${GOAL_CANS} items to win.`);
+}
 
 
 

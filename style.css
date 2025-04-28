@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kazimir:wght@400;700&family=Proxima+Nova:wght@400;700&display=swap');
+
 /* Charity: water Brand Colors
 
 Primary Colors:
@@ -19,7 +21,7 @@ Secondary Colors:
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 30px;
   background-color: #f0f0f0;
@@ -48,7 +50,8 @@ h1 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: #2E9DF7
+  color: #2E9DF7;
+  font-family: 'Kazimir', serif;
 }
 
 h1 img {
@@ -59,7 +62,9 @@ h1 img {
 
 .quest {
   text-align: center;
-  color: #2E9DF7
+  color: #2E9DF7;
+  font-family: 'Kazimir', serif;
+  font-size: 24px;
 }
 
 .progress-container {
@@ -216,6 +221,7 @@ h1 img {
   display: block;
   margin: 30px auto 0;
   transition: background-color 0.2s;
+  font-family: 'Proxima Nova', Arial, sans-serif;
 }
 
 #reset-game {
@@ -229,4 +235,60 @@ h1 img {
   display: block;
   margin: 30px auto 0;
   transition: background-color 0.2s;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+}
+
+/* Button styling */
+#easy-mode {
+  background-color: #4FCB53;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+}
+#medium-mode {
+  background-color: #2E9DF7;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+}
+
+#hard-mode {
+  background-color: #F16061;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px;
+  font-family: 'Proxima Nova', Arial, sans-serif;
+}
+
+.footer {
+  background-color: #FFC907;
+  color: #333;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+.footer a {
+  color: #2E9DF7;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
